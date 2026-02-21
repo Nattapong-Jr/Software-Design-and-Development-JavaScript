@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นัทธพงศ์ เหมือนประสาน')">ปุ่มที่ 1</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2" onclick="showDate()">ปุ่มที่ 2</button>
+    
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="showTime();">ปุ่มที่ 3</button>
+
+    <!-- Internal JavaScript -->
+     <script>
+        function showDate() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString('th-TH');
+
+            alert("เวลา: " + dateString);
+        }
+    </script>
+    <p></p>
+     <input type="text" id="userInput" placeholder="พิมพ์อะไรหน่อย...">
+
+    <button onclick="displayMessage()">แสดงข้อความ</button>
+
+    <p id = "human"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>

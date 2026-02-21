@@ -77,9 +77,71 @@ JavaScript สามารถเพิ่มลงในเว็บเพจไ
 ### บันทึกผลการทดลอง 
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นัทธพงศ์ เหมือนประสาน')">ปุ่มที่ 1</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2" onclick="showDate()">ปุ่มที่ 2</button>
+    
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="showTime();">ปุ่มที่ 3</button>
+
+    <!-- Internal JavaScript -->
+     <script>
+        function showDate() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString('th-TH');
+
+            alert("เวลา: " + dateString);
+        }
+    </script>
+    <p></p>
+     <input type="text" id="userInput" placeholder="พิมพ์อะไรหน่อย...">
+
+    <button onclick="displayMessage()">แสดงข้อความ</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
 ```
+``` JavaScript
+function showTime() {
+    const now = new Date();
+    
+    // ดึงเวลาในรูปแบบไทย (15:30:45)
+    const timeString = now.toLocaleTimeString('th-TH');
+
+    alert("วันที่: " + timeString);
+}
+
+function displayMessage() {
+    const message = document.getElementById('userInput').value;
+
+    if (message === "") {
+        alert("กรุณากรอกข้อความก่อนกดปุ่มครับ!");
+    } else {
+        alert("ข้อความที่คุณกรอกคือ: " + message);
+    }
+}
+
+
+```
+
 **รูปผลการทดลอง**
 ![รูปผลการทดลองที่ 1](images/image.png)
+![alt text](image.png)
+![alt text](image-1.png)
+![alt text](image-2.png)
+![alt text](image-3.png)
 
 ## การทดลองที่ 2: พื้นฐาน JavaScript
 ### 2.1 การประกาศตัวแปรและชนิดข้อมูล
@@ -136,10 +198,66 @@ let person = {
 ### บันทึกผลการทดลอง 2.1
 ```html
 [บันทึกโค้ด ที่นี่]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Inline JavaScript -->
+    <button onclick="alert('นัทธพงศ์ เหมือนประสาน')">ปุ่มที่ 1</button>
+
+    <!-- ทดสอบ Internal JavaScript -->
+    <button id="btn2" onclick="showDate()">ปุ่มที่ 2</button>
+    
+
+    <!-- ทดสอบ External JavaScript -->
+    <button id="btn3" onclick="showTime();">ปุ่มที่ 3</button>
+
+    <!-- Internal JavaScript -->
+     <script>
+        function showDate() {
+            const now = new Date();
+            const dateString = now.toLocaleDateString('th-TH');
+
+            alert("เวลา: " + dateString);
+        }
+    </script>
+    <p></p>
+     <input type="text" id="userInput" placeholder="พิมพ์อะไรหน่อย...">
+
+    <button onclick="displayMessage()">แสดงข้อความ</button>
+
+    <p id = "human"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+```
+``` Javascript
+let name = "Nattapong Muanprasan";
+let midtern_score = 100;
+let final_score = 100;
+
+let person ={
+    name: "Nattapong Muanprasan",
+    midtern_score: 100,
+    final_score: 100
+};
+
+console.log("ตรวจสอบข้อมูล Person:", person);
+
+// 2. แสดงผลบนหน้าเว็บที่ <p id="person"></p>
+// เราจะเข้าถึง property ด้วยจุด (.) เช่น person.name
+document.getElementById("human").innerHTML = 
+    `ชื่อ: ${person.name} <br> คะแนนกลางภาค: ${person.midtern_score} <br>
+    คะแนนปลายภาค: ${person.midtern_score} <br> คะแนนรวม: ${person.midtern_score + person.final_score}`;
 ```
 **รูปผลการทดลอง**
 ![รูปผลการทดลองที่ 2.1](images/image.png)
-
+![alt text](image-4.png)
 
 ### 2.2 การดำเนินการทางคณิตศาสตร์
 
